@@ -1,0 +1,25 @@
+<h1><%= @list.name %></h1>
+
+<div class="card m-3" style="width: 18rem;">
+  <p>
+    <% @list.bookmarks.each do |bookmark| %>
+      <h5 class="card-title"> <%=@list.movies.find(bookmark.movie_id).title %></h5>
+    <img class="card-img-top" src=<%= "#{@list.movies.find(bookmark.movie_id).poster_url}" %> alt="Movie Poster">
+    <em><%= bookmark.comment %></em>
+    <%= button_to "Delete", bookmark_path(bookmark), method: :delete %>
+    <% end %>
+  </p>
+
+</div>
+
+<%# <li class="list-group-item">
+      <%= bookmark.comment %>
+      <%#= link_to "Remove",
+                  bookmark_path(bookmark),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+
+
+
+<%= link_to "Back to Homepage", lists_path %>|
+<%= link_to 'Add a Bookmark', new_list_bookmark_path(@list) %>

@@ -1,0 +1,8 @@
+<h1> ADD A LIST : </h1>
+
+<%= simple_form_for(@list) do |f| %>
+  <%= f.input :name %>
+  <%= f.submit "Add a List"%>
+<% end %>
+
+<%= link_to "Back to Homepage", lists_path(@list) %>

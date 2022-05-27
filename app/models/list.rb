@@ -4,8 +4,6 @@ class List < ApplicationRecord
 
   validates :name, presence: true
   validates_uniqueness_of :name
-
-
 end
 
 # name cannot be blank
